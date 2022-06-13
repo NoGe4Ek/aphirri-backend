@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
     val dataSource = HikariDataSource(config)
     Database.connect(dataSource)
 
-    //Database.connect("jdbc:postgresql://localhost:5432/aphirri?characterEncoding=utf8&useUnicode=true", password = "zZzoOo20022002")
+    //Database.connect("jdbc:postgresql://localhost:5432/aphirri?characterEncoding=windows-1251&useUnicode=true", user = "postgres", password = "zZzoOo20022002")
     embeddedServer(Netty, port = System.getenv("PORT").toInt()) {
         configureSerialization()
         configureRouting()
