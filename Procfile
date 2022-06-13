@@ -1,1 +1,1 @@
-web: ./build/install/poly.aphirri.aphirri-backend/bin/poly.aphirri.aphirri-backend
+web: /build/install/poly.aphirri.aphirri-backend/bin/poly.aphirri.aphirri-backend
