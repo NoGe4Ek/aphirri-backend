@@ -1,5 +1,7 @@
 package poly.aphirri
 
+import com.zaxxer.hikari.HikariConfig
+import com.zaxxer.hikari.HikariDataSource
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import org.jetbrains.exposed.sql.Database
@@ -15,7 +17,11 @@ import poly.aphirri.plugins.configureSerialization
 //}
 
 fun main(args: Array<String>) {
-    Database.connect("jdbc:postgresql://localhost:5432/aphirri?characterEncoding=utf8&useUnicode=true", password = "zZzoOo20022002")
+    val config = HikariConfig("hikari.properties")
+    val dataSource = HikariDataSource(config)
+    Database.connect(dataSource)
+
+    //Database.connect("jdbc:postgresql://localhost:5432/aphirri?characterEncoding=utf8&useUnicode=true", password = "zZzoOo20022002")
     embeddedServer(Netty, port = System.getenv("PORT").toInt()) {
         configureSerialization()
         configureRouting()
