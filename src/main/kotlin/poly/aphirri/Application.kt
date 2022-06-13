@@ -16,7 +16,7 @@ import poly.aphirri.plugins.configureSerialization
 
 fun main(args: Array<String>) {
     Database.connect("jdbc:postgresql://localhost:5432/aphirri?characterEncoding=utf8&useUnicode=true", password = "zZzoOo20022002")
-    embeddedServer(Netty, port = 8080) {
+    embeddedServer(Netty, port = System.getenv("PORT").toInt()) {
         configureSerialization()
         configureRouting()
         configureSecurity()
