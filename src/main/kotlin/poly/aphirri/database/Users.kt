@@ -31,7 +31,7 @@ object Users : Table("users") {
                 }
             }
         } catch (e: PSQLException) {
-            e.message
+            println(e.message)
             null
         }
     }
