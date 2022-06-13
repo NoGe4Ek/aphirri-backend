@@ -1,0 +1,1 @@
+rootProject.name = "poly.aphirri.aphirri-backend"
